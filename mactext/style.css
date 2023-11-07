@@ -1,0 +1,184 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 80px;
+  text-align: center;
+  width: 100%;
+  padding-block: 20px;
+}
+
+.input {
+  width: 45%;
+  margin-inline: 27.5%;
+}
+
+.tip {
+  width: 45%;
+  border: 2px solid rgb(0, 0, 0);
+  margin-inline: 27.5%;
+  padding-block: 10px;
+  color: black;
+  margin-block: 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  display: block;
+  padding-inline: 15px;
+}
+
+.got-it {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  width: 12%;
+  font-size: 18px;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.got-it:hover {
+  text-decoration: underline;
+}
+
+.text {
+  width: 100%;
+  padding-block: 15px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  display: block;
+  padding-inline: 15px;
+  outline: none;
+  resize: none;
+}
+
+.text::placeholder,
+.value::placeholder {
+  color: rgb(190, 190, 190);
+  font-style: italic;
+  font-size: 18px;
+}
+
+.function {
+  display: flex;
+  flex-direction: row;
+  margin-block: 15px;
+}
+
+.select {
+  width: 40%;
+  padding-block: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  appearance: none;
+}
+
+.select::before {
+  content: none;
+}
+
+.value {
+  width: 40%;
+  margin-inline: 2.5%;
+  background-color: black;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: white;
+  padding-inline: 15px;
+  font-size: 18px;
+}
+
+.go {
+  width: 15%;
+  padding-block: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.result {
+  width: 45%;
+  margin-inline: 27.5%;
+  background-color: black;
+  border-radius: 10px;
+  font-size: 18px;
+  padding-inline: 25px;
+  padding-bottom: 25px;
+  color: white;
+}
+
+.result span {
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-block: 10px;
+}
+
+.copy {
+  background-color: rgb(49, 49, 49);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.result-btn {
+  padding-block: 10px;
+}
+
+.copy-btn,
+.send-btn {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 18px;
+  width: 48.75%;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(49, 49, 49);
+  color: white;
+}
+
+.copy-btn {
+  margin-right: 2.5%;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  width: 3px;
+  border: 3.5px solid black;
+  cursor: progress;
+  border-block: 5px solid black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

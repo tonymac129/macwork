@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus | MacWork</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js"></script>
+  <script src="https://kit.fontawesome.com/196781a711.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="side-bar">
+      <ul>
+        <a href="/">
+          <h1>
+            <img src="logo.png" alt="Ify logo" style="width: 45px; margin-right: 10px;">Ify
+          </h1>
+        </a>
+        
+        <a href="tasks.html">
+          <li>Tasks</li>
+        </a>
+        <a href="notes.html">
+          <li>Notes</li>
+        </a>
+        <a href="sketches.html">
+          <li>Sketches</li>
+        </a>
+        <a href="focus.html">
+          <li style="color: #4ee0f5;">Focus</li>
+        </a>
+        <br><br><br><br><br><br><br>
+        <div class="other">
+          <span>© 2023 Ify<br>All Rights Reserved</span>
+          <br style="margin-bottom: 10px;">
+          <span><a href="updates.html" class="side-bar-links" style="padding-left: 0px;">Updates</a> <a href="about.html" class="side-bar-links">About</a><a href="support.html" class="side-bar-links">Support</a></span>
+        </div>
+      </ul>
+    </div>
+    <h1 style="display: flex; align-items: center; padding-left: 300px;">Ify Focus coming Soon!</h1>
+  </div>
+  <script>
+    const todoInput = document.getElementById('task-input');
+    const saveTaskBtn = document.getElementById('add-task-btn');
+    const taskList = document.getElementById('task-list');
+  
+    saveTaskBtn.addEventListener('click', function() {
+        const taskText = todoInput.value.trim();
+        if (taskText !== '') {
+            const taskItem = document.createElement('li');
+            const remove = document.createElement('span');
+            remove.classList.add('remove');
+            remove.innerHTML = '<i class="fas fa-trash" style="color: #ffffff;"></i>';
+            taskItem.textContent = taskText;
+            taskItem.setAttribute('data-task', taskText);
+            taskItem.appendChild(remove);
+            taskList.appendChild(taskItem);
+            todoInput.value = "";
+  
+            saveTasksToStorage();
+        }
+    });
+  
+    taskList.addEventListener('click', function(event) {
+        if (event.target.classList.contains('fa-trash')) {
+            const taskItem = event.target.closest('li');
+            taskList.removeChild(taskItem);
+  
+            const taskText = taskItem.getAttribute('data-task');
+            removeTaskFromStorage(taskText);
+        }
+    });
+  
+    function removeTaskFromStorage(taskText) {
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        const taskIndexToDelete = tasks.findIndex(task => task === taskText);
+  
+        if (taskIndexToDelete !== -1) {
+            tasks.splice(taskIndexToDelete, 1);
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+    }
+  
+    function loadTasksFromStorage() {
+        const savedTasks = localStorage.getItem('tasks');
+        if (savedTasks) {
+            taskList.innerHTML = savedTasks;
+        }
+    }
+  
+    function saveTasksToStorage() {
+        localStorage.setItem('tasks', taskList.innerHTML);
+    }
+    loadTasksFromStorage();
+  </script>
+</body>
+</html>

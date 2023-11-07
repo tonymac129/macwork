@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks | MacWork</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/196781a711.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+    <link rel="icon" type="image/x-icon" href="logo.png" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="/macwork/" class="logo2" style="background-color: black">
+        <img src="/macwork/macwork-logo.png" alt="MacWork Logo" />
+      </a>
+      <a href="/macwork/calendar/" class="nav-link">Date</a>
+      <a href="/macwork/designs/" class="nav-link">Designs</a>
+      <a href="/macwork/mactext/" class="nav-link">Docs</a>
+      <a href="/macwork/drive/" class="nav-link">Drive</a>
+      <a href="/macwork/forms/" class="nav-link">Forms</a>
+      <a href="/macwork/mail/" class="nav-link">Mail</a>
+      <a href="/macwork/sheets/" class="nav-link">Sheets</a>
+      <a href="/macwork/sites/" class="nav-link">Sites</a>
+      <a href="/macwork/slides/" class="nav-link">Slides</a>
+      <a href="/macwork/tasks/" class="nav-link">Tasks</a>
+      <a
+        href=""
+        target="_blank"
+        style="color: white"
+        id="feedback"
+        title="Feedback"
+        ><i
+          class="fa-solid fa-comment"
+          style="color: #ffffff; background-color: transparent"
+        ></i
+      ></a>
+    </nav>
+    <div class="wrap">
+      <ul class="tasks" id="tasks">
+        <li>faoskdjl</li>
+      </ul>
+      <form id="input">
+        <input
+          class="input"
+          placeholder="Press Enter to add tasks"
+          autocomplete="off"
+          maxlength="250"
+        />
+        <button class="go" id="go" type="submit" onclick="go()"></button>
+      </form>
+    </div>
+    <audio id="ding">
+      <source src="ding.mp3" />
+    </audio>
+  </body>
+</html>

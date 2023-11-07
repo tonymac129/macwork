@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MacText</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <h1>MacText</h1>
+    <div class="tip">
+      <p>Tip: To quickly modify the text, press ctrl + enter or ⌘ + return.</p>
+      <button class="got-it" onclick="gotIt()">Got it!</button>
+    </div>
+    <div class="input">
+      <textarea
+        name="text"
+        id="text"
+        class="text"
+        rows="
+      2"
+        placeholder="Put your text here"
+      ></textarea>
+      <div class="function">
+        <select name="function" id="select" class="select">
+          <option value="shorten">Shorten Text</option>
+          <option value="char-count">Characters Count</option>
+          <option value="cap-all">Capitallize All</option>
+          <option value="uncap-all">Uncapitallize All</option>
+          <option value="cap">Proper Capitallization</option>
+          <option value="lorem">Random Text Generator</option>
+        </select>
+        <input class="value" placeholder="Enter value here">
+        <button class="go" onclick="go()">Go</button>
+      </div>
+    </div>
+    <div class="result">
+      <span>Result</span>
+      <div class="copy"></div>
+      <div class="result-btn">
+        <button class="copy-btn" onclick="copy()">Copy</button><button class="send-btn">Send</button>
+      </div>
+    </div>
+    <script>
+      setInterval(changePlace,100);
+      if (localStorage.closed === "yes") {
+        console.log("yes");
+        const tip = document.querySelector(".tip");
+        tip.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
